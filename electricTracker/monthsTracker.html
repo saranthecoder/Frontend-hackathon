@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .sectionTwo{
+        position: relative;
+        overflow: auto;
+        height: fit-content;
+        margin: 10px 5px;
+        padding: 10px 5px;
+    }
+    .fix{
+    width: fit-content;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgb(219, 155, 17,0.6);
+    /* border-bottom: 1px solid #dddddd; */
+}
+.fix tbody tr:nth-of-type(even) {
+    background-color: #fcf3f3;
+    color:#ca4c11;
+    font-weight: bold;
+}
+.fix tbody tr:last-of-type {
+    border-bottom: 3px solid #c96411;
+}
+.fix tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.fix tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 150px;
+}
+.fix thead tr {
+   display: block;
+   width:fit-content;
+}
+
+.fix thead {
+  background: rgb(241, 151, 66);
+  color:#fff;
+  
+}
+
+ .fix td
+ {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    width: 126px;
+    /* width: 146px; */
+ } 
+.fix th{
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+/* #uni
+{
+    width:80px;
+} */
+.sectionOne{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap ;
+    height: fit-content;
+    width: 96%;
+    margin: 30px 25px;
+    margin-bottom: 40px;
+    /* overflow: auto; */
+
+}
+
+.setGoal{
+    position: absolute;
+    width: 92%;
+    /* top: 50%; */
+    border-top: 2px dotted rgb(255, 60, 1);
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 10px;
+    color: red;
+    margin-top: 7px;
+}
+.goalSpan{
+    padding-left: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.graph {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    width: 92%;
+    border: 1px solid #0d0c0c;
+    margin-right: 5px;
+    
+    
+}
+.y-axis {
+    position: absolute;
+    height: 100%;
+    bottom: 0px;
+    left: -20px; /* Adjust this value based on your design */
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: space-around;
+    gap: 15.9%;
+  }
+  
+  .y-axis .label{
+     /* Adjust the spacing between labels */
+    text-align: right;
+  }
+  
+.bar {
+    width: 40px;
+    margin: 0 4px;
+
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+
+}
+
+/* Add specific styles for each bar if needed */
+.num{
+    position: relative;
+    top: -18px;
+    color: black;
+}
+#bar1 {
+
+    height: 80%;
+
+}
+
+#bar1::after {
+    content: 'jun';
+    font-size: 15px;
+    position: absolute;
+    bottom: 10px;
+    margin: -30px -10px;
+    color: black;
+}
+
+#bar2 {
+    height: 50%;
+}
+
+#bar2::after {
+    content: 'jul';
+    position: absolute;
+    font-size: 15px;
+
+    bottom: 10px;
+    margin: -30px -10px;
+    color: black;
+}
+
+#bar3 {
+    height: 30%;
+}
+
+#bar3::after {
+    content: 'aug';
+    position: absolute;
+    font-size: 15px;
+
+    bottom: 10px;
+    margin: -30px -10px;
+    color: black;
+}
+
+.home{
+        /* margin-top: 30px; */
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        position: relative;
+        left: 40%;
+        bottom: -15px;
+
+}
+</style>
+<body>
+    <section class="sectionOne">
+        <div class="setGoal"><span class="goalSpan">Goal</span></div>
+        <div class="y-axis">
+          <div class="label">300<b>-</b></div>
+          <div class="label">280<b>-</b></div>
+          <div class="label">260<b>-</b></div>
+          <div class="label">240<b>-</b></div>
+          <div class="label">220<b>-</b></div>
+          <div class="label">200<b>-</b></div>
+        </div>
+        <div class="graph">
+          <div class="bar" id="bar1"><div class="num">280</div></div>
+          <div class="bar" id="bar2"><div class="num">250</div></div>
+          <div class="bar" id="bar3"><div class="num">230</div></div>
+          <!-- Add more bars as needed -->
+        </div>
+        
+        
+      </section>
+    <section class="sectionTwo">
+        <table border="1" class="fix">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th id="uni">Units</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody >
+              
+            </tbody>
+        </table>
+    </section>
+
+<script>
+    const d = new Date();
+    let month = d.getMonth();
+    // console.log(month);
+   let arr=["January", "February", "March", "April", "May", "June",
+   "July", "August", "September", "October", "November", "December"];
+   let units=[235,220,200,270,265,280,250,230,240]
+   let cost=[3000,2850,2500,3900,3400,4000,3500,3100,3300]
+   for(let i=month; i>=0; i--){
+    // console.log(arr[i]);
+    let tr=document.createElement("tr");
+    let td=document.createElement("td");
+    td.innerText = arr[i]
+    let td1=document.createElement("td");
+    td1.innerText=units[i]
+    let td2=document.createElement("td");
+    td2.innerText=cost[i]
+    tr.append(td,td1,td2);
+    document.querySelector("tbody").appendChild(tr);
+   }
+
+</script>
+<script>
+    function changeBarHeight(input,date) {
+    const graph = document.querySelector('.graph');
+  
+    // Ensure the graph element exists
+    
+    const noOfChildren = graph.children.length;
+    //random value for the height of the bar
+    const percentEntered =input*10;
+   
+
+    // console.log(noOfChildren);
+    graph.innerHTML += `<div class="bar" id="bar${noOfChildren + 1}"><div class="num">${(percentEntered / 10)*10 +200}</div></div>`;
+    const lastChildId = graph.lastElementChild.id;
+    const lastChildClass = graph.lastElementChild.classList;
+    document.getElementById(lastChildId).style.height = `${percentEntered}%`;
+    
+    function addAfterSelector(selector, content, styles) {
+      const styleSheet = document.styleSheets[0]; // Use the appropriate style sheet
+    
+      // Create the CSS rule
+      const rule = `${selector}::after { content: "${content}"; ${styles} }`;
+    
+      // Insert the rule into the style sheet
+      styleSheet.insertRule(rule, styleSheet.cssRules.length);
+    }
+    
+    // Usage - Assuming lastChildClass is the class of the last element
+    addAfterSelector(`.${lastChildClass}`, `${date}`,    'font-size: 14px;position: absolute; bottom: 10px; color: black;margin: -30px -10px;');
+    
+    
+  }
+   //random date 
+   let date=new Date();
+ 
+   date= date.toLocaleString('en-US',  {month: 'short'})+"";
+   
+
+
+   //function to run once per day at night 12am
+   function runAtMidnight(callbackFunction) {
+    const now = new Date();
+    const timeToMidnight = new Date();
+    timeToMidnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
+  
+    const timeUntilMidnight = timeToMidnight - now;
+  
+    // Run the provided function when it's midnight
+    if (timeUntilMidnight <= 1000) {  // Check every second if it's close to midnight
+      // Call the provided function
+      callbackFunction();
+  
+      // Reset the interval to run again tomorrow
+      setTimeout(() => runAtMidnight(callbackFunction), 86400000);  // 24 hours in milliseconds
+    } else {
+      // Check again in a second
+      setTimeout(() => runAtMidnight(callbackFunction), 1000);
+    }
+  }
+  
+  
+  
+  // Start the function to run at midnight with the provided function
+  runAtMidnight(changeBarHeight(4,date));
+  
+  function setGoalPosition(input) {
+    const setGoal = document.querySelector('.setGoal');
+    setGoal.style.top = `${100-input}%`;
+  }
+  
+  // Call the function to set the goal position
+
+  setGoalPosition(40);
+</script>
+<a href="../elctricMain/electricmain.html" class="home">Back</a>
+</body>
+</html>

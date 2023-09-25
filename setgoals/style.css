@@ -1,0 +1,243 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+#v{
+    width:120px ;
+    margin-left: 70px;
+    margin-top: 4px;
+    border-radius: 25px;
+    background-color: yellow;
+    color: black;
+    margin-left:114px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#v:hover{
+    background-color: rgb(255, 242, 64) ;
+}
+
+.GoalOne{
+    text-align: center;
+    margin: 10px;
+}
+.goalMain {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    /* background: #d5e1ebad; */
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255, 230, 186, 0.66) 0%, rgb(250, 162, 10) 100.2% );    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #eef2f3, #8e9eab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    padding-top: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.firstH3{
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.results {
+    height: auto;
+    width: 90%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+#add
+{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom:15px;
+    background-color: white;
+    margin-left:20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: rgba(109, 108, 108, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#sub
+{
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+    padding: 0px;
+    margin-left:20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: rgba(179, 173, 173, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#dig
+{
+    font-size:30px;
+    padding-left: 15px;
+    margin-top:3px;
+    font-weight:bold;
+}
+#unit
+{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-left:5px;
+}
+.sectionOne{
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-wrap: wrap ;
+    height: fit-content;
+    width: 90%;
+    margin: 30px 25px;
+    margin-bottom:-440px;
+    /* overflow: auto; */
+    margin-top:-550px;
+
+}
+
+.setGoal{
+    position: absolute;
+    width: 100%;
+    /* top: 50%; */
+    border-top: 2px dotted rgb(255, 60, 1);
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 10px;
+    color: red;
+    margin-top: 7px;
+    display: none;
+}
+.goalSpan{
+    padding-left: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.graph {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    width: 100%;
+    border: 1px solid #0d0c0c;
+    margin-right: 5px;
+    background-color: white;
+    
+    
+}
+.y-axis {
+    position: absolute;
+    height: 100%;
+    bottom: 0px;
+    left: -20px; /* Adjust this value based on your design */
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: space-around;
+    gap: 15.9%;
+  }
+  
+  .y-axis .label{
+     /* Adjust the spacing between labels */
+    text-align: right;
+  }
+  
+.bar {
+    width: 40px;
+    margin: 0 4px;
+
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+
+}
+
+/* Add specific styles for each bar if needed */
+.num{
+    position: relative;
+    top: -18px;
+    color: black;
+}
+#bar1 {
+
+    height: 80%;
+
+}
+
+#bar1::after {
+    content: '19';
+    font-size: 15px;
+    position: absolute;
+    bottom: 10px;
+    margin: -30px -10px;
+    color: black;
+}
+
+#bar2 {
+    height: 50%;
+}
+
+#bar2::after {
+    content: '20';
+    position: absolute;
+    font-size: 15px;
+
+    bottom: 10px;
+    margin: -30px -10px;
+    color: black;
+}
+
+#bar3 {
+    height: 30%;
+}
+
+#bar3::after {
+    content: '21';
+    position: absolute;
+    font-size: 15px;
+
+    bottom: 10px;
+    margin: -30px -10px;
+    color: black;
+}
+
+.FooterBox{
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    justify-content: space-around;
+    border-radius: 3px;
+    height: 60px;
+    width: 100%;
+    /* bottom: -3px; */
+    /* left: 0px; */
+    margin:1px;
+    position:absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.FooterBox>a{
+    box-shadow: 6px 5px 5px;
+    margin: 0 5px;
+    width: 99%;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    }

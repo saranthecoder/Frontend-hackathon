@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .border{
+        display: flex;
+        flex-direction: column;
+        /* align-text: space-around; */
+    }
+    section{
+        height: 100vh;
+        overflow: hidden;
+    }
+    #Electricity{
+        margin: auto;
+        background-color: yellow;
+        width: 350px;
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    #water{
+        margin: auto;
+        width: 350px;
+
+        /* border: 1px solid black; */
+        background-color: #96e8f7;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px; 
+        border-radius: 10px;       
+    }
+    #Electricity div{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        margin-top: 30px;
+        display: grid;
+        border-radius: 8px;
+        /* justify-content: center;
+        align-items: center; */
+        /* font-size: 30px; */
+       width: 250px;
+       height: 100px;
+       margin-top: 30px;
+        margin-left: 48px;
+        background: #ffbd07;
+        /* border: 1px solid black; */
+    }
+    #water div{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        margin-top: 30px;
+        display: grid;
+       border-radius: 8px;
+       width: 250px;
+       height: 100px;
+        margin-left: 48px;
+        background-color: #7bf3e9;
+        
+    }
+    h2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .G{
+        color: rgb(100, 180, 8);
+    }
+    .R{
+        color: red;
+    }
+  h4{
+        padding-top: -30px;
+    }
+    h3{
+        padding-top: 20px;
+    }
+    button{
+        margin-top: 30px;
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <section>
+        <div class="border">
+            <div id="Electricity">
+                <div>
+                    <h3>Electric Meter</h3>
+                    <h4>(Tesla Meter)</h4>
+                </div>
+                
+                <h2 class="G">Connected</h2>
+                <h2 class="R">Not Connected</h2>
+            </div>
+            <div id="water">
+                <div>
+                    <h3>Water Meter</h3><br>
+                    <h4>(Newton Meter)</h4>
+                </div>
+                <h2 class="G">Conneted</h2>
+                <h2 class="R">Not Connecetd</h2>
+            </div>
+        </div>
+        <a href="./index.html"><button>Home</button></a>
+    </section>
+</body>
+</html>

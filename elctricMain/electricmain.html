@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="electricmain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style>
+    .sectionOne{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap ;
+    height: fit-content;
+    width: 96%;
+    margin: 0px 5px;
+    scale: 0.8 0.6;
+    /* overflow: auto; */
+
+}
+
+.setGoal{
+    position: absolute;
+    width: 100%;
+    /* top: 50%; */
+    border-top: 2px dotted rgb(255, 60, 1);
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 10px;
+    color: red;
+    margin-top: 7px;
+}
+.goalSpan{
+    padding-left: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.graph {
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    width: 100%;
+    border: 1px solid #0d0c0c;
+    margin-right: 5px;
+    box-shadow: 5px 5px 5px orange;
+    
+    
+}
+.y-axis {
+    position: absolute;
+    height: 100%;
+    bottom: 0px;
+    left: -20px; /* Adjust this value based on your design */
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: space-around;
+    gap: 15%;
+  }
+  
+  .y-axis .label{
+     /* Adjust the spacing between labels */
+    text-align: right;
+  }
+  
+.bar {
+    width: 40px;
+    margin: 0 4px;
+
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+
+}
+
+/* Add specific styles for each bar if needed */
+.num{
+    position: relative;
+    top: -18px;
+    color: black;
+}
+#bar1 {
+
+    height: 80%;
+
+}
+
+#bar1::after {
+    content: 'sep17';
+    font-size: 15px;
+    position: absolute;
+    bottom: 10px;
+    margin: -38px -18px;
+    color: black;
+}
+
+#bar2 {
+    height: 50%;
+}
+
+#bar2::after {
+    content: 'sep18';
+    position: absolute;
+    font-size: 15px;
+
+    bottom: 10px;
+    margin: -38px -18px;
+    color: black;
+}
+
+#bar3 {
+    height: 30%;
+}
+
+#bar3::after {
+    content: 'sep19';
+    position: absolute;
+    font-size: 15px;
+
+    bottom: 10px;
+    margin: -38px -18px;
+    color: black;
+}
+   </style>
+</head>
+<body>
+    <section class="main">
+        <div class="one">
+            <div>Meter reading  <b>2303.00</b></div>
+        </div>
+        <div class="two">
+            <a href="../electricTracker/monthsTracker.html">
+                <h3>Usage tracker</h3>
+                <div class="gp">
+                    <section class="sectionOne">
+                        <div class="setGoal"><span class="goalSpan">Goal</span></div>
+                        <div class="y-axis">
+                          <div class="label">10<b>-</b></div>
+                          <div class="label">8<b>-</b></div>
+                          <div class="label">6<b>-</b></div>
+                          <div class="label">4<b>-</b></div>
+                          <div class="label">2<b>-</b></div>
+                          <div class="label">0<b>-</b></div>
+                        </div>
+                        <div class="graph">
+                          <div class="bar" id="bar1"><div class="num">8</div></div>
+                          <div class="bar" id="bar2"><div class="num">5</div></div>
+                          <div class="bar" id="bar3"><div class="num">3</div></div>
+                          <!-- Add more bars as needed -->
+                        </div>
+                        
+                        
+                      </section>
+                      <script>
+                        function changeBarHeight(input,date) {
+                        const graph = document.querySelector('.graph');
+                      
+                        // Ensure the graph element exists
+                        
+                        const noOfChildren = graph.children.length;
+                        //random value for the height of the bar
+                        const percentEntered =input*10;
+                       
+                    
+                        // console.log(noOfChildren);
+                        graph.innerHTML += `<div class="bar" id="bar${noOfChildren + 1}"><div class="num">${percentEntered / 10}</div></div>`;
+                        const lastChildId = graph.lastElementChild.id;
+                        const lastChildClass = graph.lastElementChild.classList;
+                        document.getElementById(lastChildId).style.height = `${percentEntered}%`;
+                    
+                    
+                    
+                        
+                        function addAfterSelector(selector, content, styles) {
+                          const styleSheet = document.styleSheets[0]; // Use the appropriate style sheet
+                        
+                          // Create the CSS rule
+                          const rule = `${selector}::after { content: "${content}"; ${styles} }`;
+                        
+                          // Insert the rule into the style sheet
+                          styleSheet.insertRule(rule, styleSheet.cssRules.length);
+                        }
+                        
+                    
+                    
+                        // Usage - Assuming lastChildClass is the class of the last element
+                        addAfterSelector(`.${lastChildClass}`, `${date}`, 'font-size: 14px;position: absolute; bottom: 10px; color: black;margin: -34px -18px;');
+                        
+                        
+                      }
+                       //random date 
+                       let date=new Date();
+                     
+                       date= date.toLocaleString('en-US',  {month: 'short'})+""+date.getDate();
+                       
+                    
+                    
+                       //function to run once per day at night 12am
+                       function runAtMidnight(callbackFunction) {
+                        const now = new Date();
+                        const timeToMidnight = new Date();
+                        timeToMidnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
+                      
+                        const timeUntilMidnight = timeToMidnight - now;
+                      
+                        // Run the provided function when it's midnight
+                        if (timeUntilMidnight <= 1000) {  // Check every second if it's close to midnight
+                          // Call the provided function
+                          callbackFunction();
+                      
+                          // Reset the interval to run again tomorrow
+                          setTimeout(() => runAtMidnight(callbackFunction), 86400000);  // 24 hours in milliseconds
+                        } else {
+                          // Check again in a second
+                          setTimeout(() => runAtMidnight(callbackFunction), 1000);
+                        }
+                      }
+                      
+                      
+                      
+                      // Start the function to run at midnight with the provided function
+                      runAtMidnight(changeBarHeight(4,date));
+                      
+                      function setGoalPosition(input) {
+                        const setGoal = document.querySelector('.setGoal');
+                        setGoal.style.top = `${100-input}%`;
+                      }
+                      
+                      // Call the function to set the goal position
+                    
+                      setGoalPosition(80);
+                    </script>
+                </div>
+        </a>
+    </div>    
+        <div class="four">
+            <a href="../electricity goals/electricitygoals.html"><h3>Bill Calculator</h3></a>
+        </div>
+        <div class="four">
+            <a href="../setgoals/setgoal.html"><h3>Set Goals</h3></a>
+        </div>
+        <footer class="box">
+            <a href="../index.html"> <i class="fa-solid fa-house"></i></a>
+            <a href="./electricmain.html"><i class="fa-solid fa-lightbulb"></i></a>
+         <a href="../water main/watertracker.html"><i class="fa-sharp fa-solid fa-droplet"></i></a>
+             <a href="../profile main/index.html"><i class="fa-solid fa-user"></i></a>
+        </footer>
+    </section>
+</body>
+</html>

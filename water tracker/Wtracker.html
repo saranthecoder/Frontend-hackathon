@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    section{
+        overflow: hidden;
+        height: 100vh;
+        padding-top: 345px;
+    }
+    .fix{
+    width: 400px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.fix tbody tr:nth-of-type(even) {
+    background-color: #e9e9ec;
+    color:#2c8eac;
+    font-weight: bold;
+}
+.fix tbody tr:last-of-type {
+    border-bottom: 3px solid #1b8ba7;
+}
+.fix tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.fix tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 150px;
+}
+.fix thead tr {
+   display: block;
+}
+
+.fix thead {
+  background: rgb(122, 167, 197);
+  color:#fff;
+}
+
+.fix th, .fix td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+#lil
+{
+    width: 215px;
+}
+</style>
+<body>
+    <section>
+        <table border="1" class="fix">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th id="lil">Litres</th>
+                </tr>
+            </thead>
+            <tbody >
+              
+            </tbody>
+        </table>
+    </section>
+</body>
+<script>
+    const d = new Date();
+    let month = d.getMonth();
+    // console.log(month);
+   let arr=["January", "February", "March", "April", "May", "June",
+   "July", "August", "September", "October", "November", "December"];
+   for(let i=month; i>=0; i--){
+    // console.log(arr[i]);
+    let tr=document.createElement("tr");
+    let td=document.createElement("td");
+    td.innerText = arr[i]
+    let td1=document.createElement("td");
+    tr.append(td,td1);
+    document.querySelector("tbody").appendChild(tr);
+   }
+
+</script>
+</html>

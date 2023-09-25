@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+        background-image: url('12038.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        backdrop-filter: blur(6px);
+    }
+    section{
+        z-index: 2;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .box{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        width:300px ;
+        height: auto;
+        /* border: 1px solid black; */
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    input{
+        border: 0.4px solid black;
+        width: 200px;
+        height: 30px;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 15px;
+        padding-left: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    h1{
+        text-align: center;
+        margin-top: 60px;
+    }
+    select{
+        margin: auto;
+        width: 200px;
+        height: 30px;
+        margin-bottom: 30px;
+        
+    }
+    #ch{
+        display: flex;
+    }
+    #ch>input{
+        width: 15px;
+        height: 15px;
+    }
+    #ch span{
+        color: crimson;
+    }
+    #btn{
+       background-color: orange;
+    }
+</style>
+<body>
+    <section>
+        <h1>Sign Up</h1>
+        <form class="box">
+            <input type="text" placeholder="Enter Name">
+            <input type="number" placeholder="Phone Number">
+            <input type="email" placeholder="Enter Email">
+            <input type="number" placeholder="Aadhar Number" style="margin-bottom: 20px;">
+            <select name="" id="">
+                <option value="">Select Your State</option>
+                <option value="">Andhra Pradesh</option>
+                <option value="">Telengana</option>
+                <option value="">Kerala</option>
+                <option value="">Tamilnadu</option>
+            </select>
+           <div id="ch">
+            <input type="checkbox" name="" id="check">
+            <p>I read and agree to <span>Terms & Conditions</span></p>
+           </div>
+            <input id="btn" type="button" value="CREATE ACCOUNT">
+            <h4 style="margin-left: 40px;">Already have an Account?<a href="../sign in/two.html">Sign in</a></h4>
+           
+        </form>
+    </section>
+</body>
+</html>

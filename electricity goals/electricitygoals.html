@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setGoal</title>
+    <link rel="stylesheet" href="./electricitygaols.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <section class="goalMain">
+        <h3 class="firstH3">Calculate your Bill</h3>
+        <div class="GoalOne">
+            <button id="add">+</button><span id="dig">0 </span><span id="unit">Units  per day</span><button id="sub">-</button>
+        </div>
+        <div class="results" id="v">
+            Calculate
+        </div>
+        <div class="GoalThree">
+            <h3>Estimated Current Bill</h3>
+            <div class="currentBill">Rs.</div>
+        </div>
+        <div class="three">
+            <h3>Charges per Unit</h3>
+            <div class="sug">1 to 100 units - Rs.10/unit</div>
+            <div class="sug">100 to 200 units - Rs.15/unit</div>
+            <div class="sug">200 to 300 units - Rs.20/unit</div>
+            <div class="sug">above 300 units - Rs.25/unit</div>
+        </div>
+        <div class="three">
+            <h3>Maintainace Suggestions</h3>
+            <h4>Turn off the unnecessary lights and devices</h4>
+            <h4>Use Led lights and less power consuming devices</h4>
+            <h4>Use natural light by opening curtains during the day</h4>
+        </div>
+        <f class="FooterBox">
+            <a href="../index.html"> <i class="fa-solid fa-house"></i></a>
+            <a href="../elctricMain/electricmain.html"><i class="fa-solid fa-lightbulb"></i></a>
+            <a href="../water main/watertracker.html"><i class="fa-sharp fa-solid fa-droplet"></i></a>
+             <a href="../profile main/index.html"><i class="fa-solid fa-user"></i></a>
+</body>
+<script>
+   let add= document.querySelector("#add").addEventListener("click",fun)
+   let sub= document.querySelector("#sub").addEventListener("click",func)
+   var c=0;
+ 
+   function func(){
+     var unit=document.querySelector("span").innerText= (c=c-1);
+   }
+   function fun(){
+     var unit=document.querySelector("span").innerText=(c=c+1);
+   }
+  
+   document.querySelector(".results").addEventListener("click",calfun)
+  
+   
+   function calfun(){
+    let units=document.querySelector("span").innerText;
+    let ans=units*30;
+    let unitss;
+    // console.log(units)
+    // console.log(ans)
+    if (ans <= 100)
+    {
+        unitss= ans * 10;
+    }
+    else if (ans <= 200)
+    {
+        unitss=  (100 * 10)
+            + (ans - 100)
+                  * 15;
+    }
+    else if (ans <= 300)
+    {
+        unitss= (100 * 10)
+            + (100 * 15)
+            + (ans - 200)
+                  * 20;
+    }
+    else 
+    {
+        unitss= (100 * 10) + (100 * 15) + (100 * 20) + (ans - 300)* 25;
+    }
+    let result=document.querySelector(".currentBill").innerHTML=unitss;
+    
+}
+
+
+   
+</script>
+</html>
