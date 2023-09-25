@@ -122,7 +122,8 @@ function setGoalPosition(input) {
     setGoal.style.top = `${100 - input * 10}%`;
 }
 
-const apiUrl = 'http://localhost:8080/';
+// const apiUrl = 'http://localhost:8080/';
+const apiUrl = 'https://setgoals-server.onrender.com';
 // const apiUrl = 'https://setgoals-server.onrender.com';
 const dataContainer = document.getElementById('data-container');
 let goalReached = false;
