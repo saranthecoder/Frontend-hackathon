@@ -46,7 +46,9 @@ class Chatbox {
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
       //  https://bot-server-pjk8.onrender.com/predict
-        fetch('http://127.0.0.1:3000/predict', {
+        const api = "https://bot-server-pjk8.onrender.com/predict"
+        //'http://127.0.0.1:3000/predict'
+        fetch(api, {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',
