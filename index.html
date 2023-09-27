@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
       <style>
-        
+        #alert{
+          display: none;
+          font-size: 17rem;
+        }
       </style>
   </head>
   <body>
+    <h1 id="alert"> Please open in Phone</h1>
+    <div id="main1">
     <section class="sectiona" >
       <div class="profile">
         <img src="./ironman.jpg" alt="profile">
@@ -93,9 +98,24 @@
         </div>
       </div>
     </div>
+    </div>
   </body>
   <script src="./app.js"></script>
   <script>
+    var myElement = document.getElementById('main1');
+    function checkWidth() {
+    const width = myElement.offsetWidth;
+      console.log(width);
+    if (width > 400) {
+        myElement.style.display = 'none';
+        
+      } else {
+        myElement.style.display = 'block';
+    }
+  }
+
+checkWidth();
+window.addEventListener('resize', checkWidth);
     var profile = document.getElementById('profile');
     profile.addEventListener('click',()=>{
       const nav = document.querySelector("section")
