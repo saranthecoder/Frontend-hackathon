@@ -102,20 +102,23 @@
   </body>
   <script src="./app.js"></script>
   <script>
+    var notify = document.getElementById('alert')
     var myElement = document.getElementById('main1');
     function checkWidth() {
     const width = myElement.offsetWidth;
       console.log(width);
     if (width > 400) {
         myElement.style.display = 'none';
-        
+        notify.style.display = 'block'
       } else {
         myElement.style.display = 'block';
+        notify.style.display = 'none'
     }
   }
 
 checkWidth();
 window.addEventListener('resize', checkWidth);
+
     var profile = document.getElementById('profile');
     profile.addEventListener('click',()=>{
       const nav = document.querySelector("section")
