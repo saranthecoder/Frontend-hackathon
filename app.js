@@ -46,7 +46,7 @@ class Chatbox {
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
       //  https://bot-server-pjk8.onrender.com/predict
-        const api = "https://bot-server-pjk8.onrender.com/predict"
+        const api = "https://ai-bot-server-zvs0.onrender.com/predict"
         //'http://127.0.0.1:3000/predict'
         fetch(api, {
             method: 'POST',
