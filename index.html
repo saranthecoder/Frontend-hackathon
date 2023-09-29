@@ -4,134 +4,169 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aqua-Power-Tracker</title>
-    <link rel="icon" type="image/x-icon" href="./logo.jpg">
+    <link rel="icon" type="image/x-icon" href="./logo.jpg" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-      <style>
-        #alert{
-          display: none;
-          font-size: 100px;
-        }
-      </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      #alert {
+        display: none;
+        font-size: 100px;
+      }
+      @media only screen and (min-width: 600px) {
+        .web{
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          height: 500px;
+          }
+          .inner{
+            width: 60vh;
+            height: 30vh;
+            font-size: 30px;
+          }
+          .consumed{
+            font-size: 30px;
+            height: 30vh;
+            width: 30vh;
+          }
+          .cons{
+            font-size: 100px;
+          }
+      }
+    </style>
   </head>
   <body>
-    <h1 id="alert"> Please open in Phone</h1>
+    <h1 id="alert">Please open in Phone</h1>
     <div id="main1">
-    <section class="sectiona" >
-      <div class="profile">
-        <img src="./ironman.jpg" alt="profile">
-        <h2>IronMan</h2>
-      </div>
-      <span>X</span>
-      <div class="details">
-        <ul>User</ul>
-       <a  href="./connectivity.html"><ul id="connect">Connectivity</ul></a> 
-        <ul>Support</ul>
-        <ul>Logout</ul>
-      </div>
-    </section>
-    <div class="container" id="main">
-      <div class="heading">
-        <img class="logo" src="./logo.jpg" alt="logo" />
-        <div>Aqua Power</div>
-        <img class="logo" id="profile" src="./ironman.jpg" alt="">
-      </div>
-      <div class="cons">
-
-        <div class="consumed elec_cons">
-          <h1>80%</h1>
-          <p>Electricity Consumed</p>
+      <section class="sectiona">
+        <div class="profile">
+          <img src="./ironman.jpg" alt="profile" />
+          <h2>IronMan</h2>
+        </div>
+        <span>X</span>
+        <div class="details">
+          <ul>
+            User
+          </ul>
+          <a href="./connectivity.html"
+            ><ul id="connect">
+              Connectivity
+            </ul></a
+          >
+          <ul>
+            Support
+          </ul>
+          <ul>
+            Logout
+          </ul>
+        </div>
+      </section>
+      <div class="container" id="main">
+        <div class="heading">
+          <img class="logo" src="./logo.jpg" alt="logo" />
+          <div>Aqua Power</div>
+          <img class="logo" id="profile" src="./ironman.jpg" alt="" />
+        </div>
+        <div class="cons">
+          <div class="consumed elec_cons">
+            <h1>80%</h1>
+            <p>Electricity Consumed</p>
           </div>
 
-        <div class="consumed water_cons">
-          <h1>90%</h1>
-          <p>Water <br>Consumed</p>
+          <div class="consumed water_cons">
+            <h1>90%</h1>
+            <p>Water <br />Consumed</p>
+          </div>
         </div>
-
-      </div>
-      <a href="./elctricMain/electricmain.html">
-        <div class="inner elec">
-          <h1>Electricity</h1>
-          <p>Switch Off, Turn On Savings</p>
-          <p><b>Track & Set goals...</b></p>
+        <div class="web">
+          <a href="./elctricMain/electricmain.html">
+            <div class="inner elec">
+              <h1>Electricity</h1>
+              <p>Switch Off, Turn On Savings</p>
+              <p><b>Track & Set goals...</b></p>
+            </div>
+          </a>
+          <a href="./water main/watertracker.html">
+            <div class="inner water">
+              <h1>Water</h1>
+              <p>Every Drop Counts: Save Water!</p>
+              <p><b>Track your saving...</b></p>
+            </div>
+          </a>
         </div>
-      </a>
-      <a href="./water main/watertracker.html">
-        <div class="inner water">
-          <h1>Water</h1>
-          <p>Every Drop Counts: Save Water!</p>
-          <p><b>Track your saving...</b></p>
-        </div>
-      </a>
-      <div class="box">
-        <div class="bot_heading">
-          Want to know more about World wide Electric & Water Saving:
-        </div>
-        <div class="bot">
-          <div class="bot_container">
-            <div class="chatbox">
+        <div class="box">
+          <div class="bot_heading">
+            Want to know more about World wide Electric & Water Saving:
+          </div>
+          <div class="bot">
+            <div class="bot_container">
+              <div class="chatbox">
                 <div class="chatbox__support">
-                    <div class="chatbox__header">
-                        <div class="chatbox__image--header">
-                            <img src="./design 1.png" alt="image" width="50px">
-                        </div>
-                        <div class="chatbox__content--header">
-                            <h4 class="chatbox__heading--header">AI bot</h4>
-                            <p class="chatbox__description--header">Hi. My name is Saran !</p>
-                        </div>
+                  <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                      <img src="./design 1.png" alt="image" width="50px" />
                     </div>
-                    <div class="chatbox__messages">
-                        <div></div>
+                    <div class="chatbox__content--header">
+                      <h4 class="chatbox__heading--header">AI bot</h4>
+                      <p class="chatbox__description--header">
+                        Hi. My name is Saran !
+                      </p>
                     </div>
-                    <div class="chatbox__footer">
-                        <input type="text" placeholder="Write a message...">
-                        <button class="chatbox__send--footer send__button">Send</button>
-                    </div>
+                  </div>
+                  <div class="chatbox__messages">
+                    <div></div>
+                  </div>
+                  <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message..." />
+                    <button class="chatbox__send--footer send__button">
+                      Send
+                    </button>
+                  </div>
                 </div>
                 <div class="chatbox__button">
-                    <!-- <i class="fa-solid fa-comment-dots"></i> -->
-                    <img class="but" src="./icons8-chatbot-64.png"/>
+                  <!-- <i class="fa-solid fa-comment-dots"></i> -->
+                  <img class="but" src="./icons8-chatbot-64.png" />
                 </div>
-                
+              </div>
             </div>
-
-        </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </body>
   <script src="./app.js"></script>
   <script>
-    var notify = document.getElementById('alert')
-    var myElement = document.getElementById('main1');
+    var notify = document.getElementById("alert");
+    var myElement = document.getElementById("main1");
     function checkWidth() {
-    const width = myElement.offsetWidth;
+      const width = myElement.offsetWidth;
       console.log(width);
-    if (width > 5000000) {
-        myElement.style.display = 'none';
-        notify.style.display = 'block'
+      if (width > 5000000) {
+        myElement.style.display = "none";
+        notify.style.display = "block";
       } else {
-        myElement.style.display = 'block';
-        notify.style.display = 'none'
+        myElement.style.display = "block";
+        notify.style.display = "none";
+      }
     }
-  }
 
-checkWidth();
-window.addEventListener('resize', checkWidth);
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
 
-    var profile = document.getElementById('profile');
-    profile.addEventListener('click',()=>{
-      const nav = document.querySelector("section")
-      document.getElementById("main").style.display = "none"
-        nav.classList.add("active")
-
-    })
-    var but = document.querySelector('span');
-    but.addEventListener('click',()=>{
-      const nav = document.querySelector("section")
-      document.getElementById("main").style.display = "block"
-        nav.classList.remove("active")
-    })
+    var profile = document.getElementById("profile");
+    profile.addEventListener("click", () => {
+      const nav = document.querySelector("section");
+      document.getElementById("main").style.display = "none";
+      nav.classList.add("active");
+    });
+    var but = document.querySelector("span");
+    but.addEventListener("click", () => {
+      const nav = document.querySelector("section");
+      document.getElementById("main").style.display = "block";
+      nav.classList.remove("active");
+    });
   </script>
 </html>
